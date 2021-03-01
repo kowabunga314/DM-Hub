@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <!-- {{ fieldSchema.title }} -->
-    <label for="">{{ fieldSchema.title }}</label>
-    <input 
+  <div class="field-container">
+    <label>{{ fieldSchema.title }}: </label>
+    <input
+      :id="fieldSchema.name"
       :type="fieldSchema.type"
       :value="fieldSchema.value"
       :checked="fieldSchema.checked"
@@ -15,22 +15,16 @@
 export default {
   name: 'Field',
   props: [ 'fieldSchema' ],
-  data () {
-    return {
-
-    }
-  },
   methods: {
     handleUpdate(event) {
       console.log('event:', event)
     }
-  },
-  created () {
-    console.log('field schema:', this.fieldSchema)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.field-container {
+  padding: 5px;
+}
 </style>

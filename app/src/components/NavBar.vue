@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="nav">
     <router-link to="/">Home</router-link>
   </div>
 </template>
@@ -11,5 +11,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.nav {
+}
 </style>

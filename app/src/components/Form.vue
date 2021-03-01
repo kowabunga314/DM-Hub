@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="form-container">
     <h2>{{ formSchema.title }}</h2>
     <div v-for="field in formSchema.properties" :key="field.name">
       <Field :fieldSchema="field" />
-      <!-- <span>{{field.title}}</span> -->
     </div>
   </div>
 </template>
@@ -14,15 +13,15 @@ import Field from '@/components/Field.vue'
 export default {
   name: 'Form',
   components: { Field },
-  props: [ 'formSchema' ],
-  created () {
-    this.formSchema.properties.forEach(field => {
-      console.log('field:', field)
-    })
-  }
+  props: [ 'formSchema' ]
 }
 </script>
 
 <style lang="scss" scoped>
-
+.form-container {
+  padding-bottom: 20px;
+}
+h2 {
+  margin-bottom: 40px;
+}
 </style>
